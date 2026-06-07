@@ -1,26 +1,301 @@
-<html>
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEACH - Thousand Year Blood War</title>
+
 <style>
-  *{
-    font-family:sans-serif;
-  }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#0a0a0a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:100;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+    color:#ff5e00;
+    letter-spacing:3px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ff5e00;
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+    url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:5rem;
+    line-height:1;
+    color:#ff5e00;
+    text-shadow:0 0 20px rgba(255,94,0,.7);
+}
+
+.hero h2{
+    font-size:2rem;
+    margin:15px 0;
+}
+
+.hero p{
+    color:#ccc;
+    margin-bottom:30px;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ff5e00;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px #ff5e00;
+}
+
+/* Characters */
+.characters{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:3rem;
+    color:#ff5e00;
+    margin-bottom:50px;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#111;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.4s;
+    border:1px solid #222;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(255,94,0,.5);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#ff5e00;
+}
+
+/* About */
+.about{
+    padding:100px 8%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:500px;
+    max-width:100%;
+    border-radius:20px;
+}
+
+.about-content{
+    flex:1;
+}
+
+.about-content h2{
+    font-size:3rem;
+    color:#ff5e00;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    color:#ccc;
+    line-height:1.8;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    color:#888;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero{
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    nav ul{
+        display:none;
+    }
+}
 </style>
-<title>yo hisashiburi</title>
 </head>
- <body>
-<h2>Bankai</h2>
-<p>
-  <b>Bankai</b> is the ultimate, final form of a Zanpakutō (soul-cutting sword) in the hit anime and manga series Bleach
-</p>
-<h2>Zanpakuto</h2>
-<p>
- <b>The Zanpakutō</b> is the signature weapon wielded by Soul Reapers in the hit series Bleach
-</p>
+<body>
 
+<!-- Navbar -->
+<nav>
+    <div class="logo">BLEACH</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Characters</a></li>
+        <li><a href="#">Story</a></li>
+        <li><a href="#">Episodes</a></li>
+    </ul>
+</nav>
 
-<br>
-<br>
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>BLEACH</h1>
+        <h2>Thousand-Year Blood War</h2>
+        <p>
+            Follow Ichigo Kurosaki as he unlocks unimaginable powers and
+            faces the Quincy King in the ultimate battle that will decide
+            the fate of the Soul Society.
+        </p>
+        <a href="#" class="btn">Watch Now</a>
+    </div>
+</section>
 
-<h1>NEW LINE</h1>
-  </body>
+<!-- Characters -->
+<section class="characters">
+    <h2 class="section-title">Main Characters</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://picsum.photos/400/500?random=1">
+            <div class="card-content">
+                <h3>Ichigo Kurosaki</h3>
+                <p>Substitute Soul Reaper and protector of Karakura Town.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/500?random=2">
+            <div class="card-content">
+                <h3>Rukia Kuchiki</h3>
+                <p>The Soul Reaper who changed Ichigo's destiny forever.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/500?random=3">
+            <div class="card-content">
+                <h3>Byakuya Kuchiki</h3>
+                <p>Captain of Squad 6 and master swordsman.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/500?random=4">
+            <div class="card-content">
+                <h3>Kenpachi Zaraki</h3>
+                <p>The strongest battle-loving captain of Soul Society.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- About -->
+<section class="about">
+    <img src="https://picsum.photos/700/450?random=5">
+
+    <div class="about-content">
+        <h2>The Final Arc</h2>
+        <p>
+            The Thousand-Year Blood War is the climactic saga of Bleach.
+            As the Quincy army invades Soul Society, legendary captains,
+            powerful Bankai transformations, and epic battles reshape the
+            world forever. Witness the final evolution of Ichigo Kurosaki
+            and the truth behind his powers.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 BLEACH Anime Fan Landing Page
+</footer>
+
+</body>
 </html>
